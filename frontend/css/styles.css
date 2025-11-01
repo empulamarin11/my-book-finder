@@ -1,0 +1,22 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f9f9f9;
+}
+#results {
+  margin-top: 20px;
+}
+.book-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  max-width: 400px;
+  background: #fff;
+}
+.book-card img {
+  max-height: 200px;
+}
+.save-btn {
+  margin-top: 0.5rem;
+}
