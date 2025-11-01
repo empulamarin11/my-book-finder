@@ -7,13 +7,15 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <h1>🔐 Login</h1>
-  <form id="loginForm">
-    <input type="text" id="user" placeholder="Usuario" required />
-    <input type="password" id="pass" placeholder="Contraseña" required />
-    <button type="submit">Entrar</button>
-  </form>
-  <p id="error" style="color:red;"></p>
+  <div class="login-container">
+    <h1>🔐 Acceso</h1>
+    <form id="loginForm">
+      <input type="text" id="user" placeholder="Usuario" required />
+      <input type="password" id="pass" placeholder="Contraseña" required />
+      <button type="submit">Entrar</button>
+    </form>
+    <p id="error"></p>
+  </div>
 
   <script>
     document.getElementById('loginForm').addEventListener('submit', e => {

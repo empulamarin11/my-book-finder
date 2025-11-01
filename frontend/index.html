@@ -8,22 +8,28 @@
 </head>
 <body>
 
-  <!-- 🔐 SIEMPRE redirige al login si no está logueado -->
+  <!-- 🔐 Redirige al login si no está logueado -->
   <script>
     if (!localStorage.getItem('logged')) {
       location.href = 'login.html';
     }
   </script>
 
-  <!-- 🔴 Botón de SALIR (permanente) -->
-  <button onclick="localStorage.removeItem('logged'); location.href='login.html';" style="float:right;">
-    Salir
-  </button>
+  <header>
+    <h1>📚 My Book Finder</h1>
+    <button id="salirBtn" onclick="localStorage.removeItem('logged'); location.href='login.html';">
+      Salir
+    </button>
+  </header>
 
-  <h1>📚 My Book Finder</h1>
-  <input type="text" id="searchInput" placeholder="Type a book title..." />
-  <button id="searchBtn">Search</button>
+  <!-- Resultados -->
   <div id="results"></div>
+
+  <!-- SearchBox al final -->
+  <div id="searchBox">
+    <input type="text" id="searchInput" placeholder="Buscar libros..." />
+    <button id="searchBtn">Buscar</button>
+  </div>
 
   <script type="module" src="js/app.js"></script>
 </body>
