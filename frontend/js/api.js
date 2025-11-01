@@ -5,7 +5,7 @@ export async function searchGoogleBooks(query) {
   return data.items || [];
 }
 
-// Libros aleatorios
+// Random books
 export async function getRandomBooks() {
   const res = await fetch('https://www.googleapis.com/books/v1/volumes?q=+&orderBy=newest&maxResults=20');
   const data = await res.json();

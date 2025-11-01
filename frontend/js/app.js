@@ -1,7 +1,7 @@
 import { searchGoogleBooks, saveBook } from "./api.js";
 import { renderBooks } from "./ui.js";
 
-/* ---------- BÚSQUEDA NORMAL ---------- */
+/* ---------- NORMAL SEARCH ---------- */
 document.getElementById('searchBtn').addEventListener('click', async () => {
   const query = document.getElementById('searchInput').value.trim();
   if (!query) return;
@@ -21,7 +21,7 @@ document.getElementById('searchBtn').addEventListener('click', async () => {
   });
 });
 
-/* ---------- 3 LIBROS FIJOS AL ENTRAR ---------- */
+/* ---------- 3 FIXED BOOKS UPON ENTRY---------- */
 const librosFijos = [
   {
     title: 'El Principito',
