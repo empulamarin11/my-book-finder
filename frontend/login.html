@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - My Book Finder</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <h1>🔐 Login</h1>
+  <form id="loginForm">
+    <input type="text" id="user" placeholder="Usuario" required />
+    <input type="password" id="pass" placeholder="Contraseña" required />
+    <button type="submit">Entrar</button>
+  </form>
+  <p id="error" style="color:red;"></p>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const user = document.getElementById('user').value.trim();
+      const pass = document.getElementById('pass').value.trim();
+      if (user === 'erick' && pass === 'erick123') {
+        localStorage.setItem('logged', '1');
+        location.href = 'index.html';
+      } else {
+        document.getElementById('error').textContent = 'Usuario o contraseña incorrectos';
+      }
+    });
+  </script>
+</body>
+</html>
