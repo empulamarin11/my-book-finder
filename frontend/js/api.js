@@ -5,15 +5,9 @@ export async function searchGoogleBooks(query) {
   return data.items || [];
 }
 
-// Random books
-export async function getRandomBooks() {
-  const res = await fetch('https://www.googleapis.com/books/v1/volumes?q=+&orderBy=newest&maxResults=20');
-  const data = await res.json();
-  return data.items || [];
-}
 
 // Strapi API
-const STRAPI_URL = "http://backend:1337/api";
+const STRAPI_URL = "http://localhost:1337/api";
 
 export async function saveBook(book) {
   await fetch(`${STRAPI_URL}/books`, {
