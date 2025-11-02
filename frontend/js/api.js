@@ -7,7 +7,7 @@ export async function searchGoogleBooks(query) {
 
 
 // Strapi API
-const STRAPI_URL = "http://localhost:1337/api";
+const STRAPI_URL = "https://my-book-finder-gmv9.onrender.com";
 
 export async function saveBook(book) {
   await fetch(`${STRAPI_URL}/books`, {
