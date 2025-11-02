@@ -1,24 +1,24 @@
 FROM node:20
 WORKDIR /srv/app
 
-# Copiar package.json
+# Copy package.json
 COPY package*.json ./
 
-# Verificar que package.json se copió y ver su contenido
+# Verify that package.json was copied and check its contents
 RUN ls -la package.json
 RUN cat package.json | grep -A 20 "scripts"
 
-# Instalar dependencias
+# Install dependencies
 RUN npm install && npm install pg --save
 
-# Copiar todo
+# Copy everything
 COPY . ./
 
-# Verificar nuevamente después de copiar todo
+# Check again after copying everything
 RUN ls -la package.json
 RUN npm run
 
-# Ahora hacer el build
+# Now build
 RUN npm run build
 
 EXPOSE 1337
