@@ -1,23 +1,6 @@
 import path from 'path';
 
 export default ({ env }) => {
-  // ✅ DETECCIÓN AUTOMÁTICA PARA STRAPI CLOUD
-  if (env('STRAPI_CLOUD') === 'true' || env('DATABASE_URL')?.includes('postgres.railway')) {
-    return {
-      connection: {
-        client: 'postgres',
-        connection: {
-          connectionString: env('DATABASE_URL'),
-          ssl: { rejectUnauthorized: false }
-        },
-        pool: { 
-          min: env.int('DATABASE_POOL_MIN', 0), 
-          max: env.int('DATABASE_POOL_MAX', 10) 
-        },
-      }
-    };
-  }
-
   const client = env('DATABASE_CLIENT', 'sqlite');
 
   const connections = {
